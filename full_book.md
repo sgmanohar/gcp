@@ -1,7 +1,1473 @@
+***
+
+# Good Coding Practice for Scientists
+
+Sanjay Manohar
+
+MA MB BChir PhD MRCP MBPsS AFHEA MAcadMEd
+
+Oxford Biology Primer Series, Tools and Techniques
+
+## Contents
+
+Contents
+
+[Good Coding Practice for Scientists 1](#good-coding-practice-for-scientists)
+
+***
+
+[Contents 2](#_heading=h.30j0zll)
+
+***
+
+[Chapter 1: Introduction 9](#chapter-1-introduction)
+
+***
+
+[1.1. Aims of this book 9](#aims-of-this-book)
+
+***
+
+[1.2. What makes coding so powerful? 10](#what-makes-coding-so-powerful)
+
+***
+
+[1.3. Classifying programming languages 11](#what-language-to-choose)
+
+***
+
+[Functional vs Imperative: 11](#functional-vs-imperative)
+
+***
+
+[Strongly-typed vs. weakly-typed languages 12](#strongly-typed-vs-weakly-typed-languages)
+
+***
+
+[Interpreted vs Compiled languages 12](#interpreted-vs-compiled-languages)
+
+***
+
+[High-level vs Low-level languages 13](#high-level-vs-low-level-languages)
+
+***
+
+[General-purpose vs Domain-specific languages (DSLs) 13](#general-purpose-vs-domain-specific-languages-dsls)
+
+***
+
+[Zero vs one-based indexing 13](#zero-vs-one-based-indexing)
+
+***
+
+[1.4. What language to choose 14](#chapter-summary)
+
+***
+
+[Chapter summary 15](#_heading=h.lnxbz9)
+
+***
+
+[Chapter 2: Best Practices 15](#chapter-2-best-practices)
+
+***
+
+[2.1. What is Good Coding Practice? 15](#21-what-is-good-coding-practice)
+
+***
+
+[2.2. Why should I bother to write good code? 15](#22-why-should-i-bother-to-write-good-code)
+
+***
+
+[Software carpentry 16](#software-carpentry)
+
+***
+
+[2.3. Open Code, Licenses and Publishing Code 16](#23-version-control)
+
+***
+
+[2.4. Version control 17](#_heading=h.3j2qqm3)
+
+***
+
+[Diff 18](#diff)
+
+***
+
+[2.5. Publishing Code 19](#24-publishing-code)
+
+***
+
+[Code security 20](#code-security)
+
+***
+
+[2.6. The Software Development Process 21](#25-open-code-licenses-and-publishing-code)
+
+***
+
+[Chapter summary 21](#_heading=h.3whwml4)
+
+***
+
+[Chapter 3: Preparing to code 21](#chapter-3-preparing-to-code)
+
+***
+
+[3.1. Are you sitting comfortably? 22](#31-are-you-sitting-comfortably)
+
+***
+
+[Adjust your seat 22](#adjust-your-seat)
+
+***
+
+[Keyboard and mouse 22](#keyboard-and-mouse)
+
+***
+
+[Screen position and visibility 22](#screen-position-and-visibility)
+
+***
+
+[Posture 23](#posture)
+
+***
+
+[3.2. Your coding environment 23](#32-your-coding-environment)
+
+***
+
+[Using an IDE 23](#using-an-ide)
+
+***
+
+[Fonts 26](#fonts)
+
+***
+
+[Monospaced fonts 26](#monospaced-fonts)
+
+***
+
+[Font size 26](#font-size)
+
+***
+
+[Hazards of IDEs 26](#hazards-of-ides)
+
+***
+
+[Know where to find help 27](#know-where-to-find-help)
+
+***
+
+[3.3. The Neuroscience of Legibility 27](#33-the-neuroscience-of-legibility)
+
+***
+
+[Screen orientation 27](#screen-orientation)
+
+***
+
+[Spacing 29](#spacing)
+
+***
+
+[Crowding 30](#_heading=h.1v1yuxt)
+
+***
+
+[Tidy code = Tidy mind 31](#tidy-code--tidy-mind)
+
+***
+
+[Black on white, or white on black? 32](#black-on-white-or-white-on-black)
+
+***
+
+[Syntax highlighting 32](#syntax-highlighting)
+
+***
+
+[Organise your files 33](#organise-your-files)
+
+***
+
+[Keeping files a sensible order 33](#keeping-files-in-a-sensible-order)
+
+***
+
+[Theory of mind 34](#theory-of-mind)
+
+***
+
+[Chapter Summary 35](#chapter-summary-2)
+
+***
+
+[Chapter 4: Comments 35](#chapter-4-comments-and-documentation)
+
+***
+
+[4.1. Anatomy of a comment 35](#41-anatomy-of-a-comment)
+
+***
+
+[4.2. Commenting a variable declaration 37](#42-commenting-a-variable-declaration)
+
+***
+
+[4.3. Commenting a function 38](#43-commenting-a-function)
+
+***
+
+[Function inputs 38](#function-inputs)
+
+***
+
+[Function Outputs 39](#function-outputs)
+
+***
+
+[Error conditions 39](#error-conditions)
+
+***
+
+[Header 40](#header)
+
+***
+
+[Functions that take functions 40](#functions-that-take-functions)
+
+***
+
+[4.4. Iffing out 41](#44-iffing-out)
+
+***
+
+[Chapter Summary 41](#chapter-summary-3)
+
+***
+
+[Chapter 5: Choosing a nice name 42](#chapter-5-choosing-names)
+
+***
+
+[5.1. Naming conventions 42](#_heading=h.3cqmetx)
+
+***
+
+[Avoid spaces and minus signs in file names 43](#_heading=h.1rvwp1q)
+
+***
+
+[Naming functions 43](#naming-functions)
+
+***
+
+[5.2. Names are greedy (Huffman coding) 43](#52-names-are-greedy-huffman-coding)
+
+***
+
+[5.3. Long and short names 43](#53-long-and-short-names)
+
+***
+
+[The Readability-Writeability trade-off 45](#the-readability-writeability-trade-off)
+
+***
+
+[5.4. Variable types 45](#54-variable-types)
+
+***
+
+[Naming booleans 45](#naming-booleans)
+
+***
+
+[Naming arrays 45](#naming-arrays)
+
+***
+
+[5.5. Enumerations 46](#55-enumerations)
+
+***
+
+[Chapter summary 47](#chapter-summary-4)
+
+***
+
+[Chapter 6: Conceptualisation 47](#chapter-6-conceptualisation)
+
+***
+
+[6.1. Spotting conceptual errors 47](#61-abstract-vs-explicit-code)
+
+***
+
+[Your code contains “clear” 47](#your-code-contains-clear)
+
+***
+
+[You use global variables 48](#you-use-global-variables)
+
+***
+
+[You use an “eval” statement 48](#you-use-an-eval-statement-pythonmatlab)
+
+***
+
+[Your variable names contain numbers 49](#your-variable-names-contain-numbers)
+
+***
+
+[You needed to copy and paste code 50](#you-needed-to-copy-and-paste-code)
+
+***
+
+[Your functions have a lot of parameters 50](#_heading=h.3vac5uf)
+
+***
+
+[You don’t cover all the cases 50](#you-dont-cover-all-the-cases)
+
+***
+
+[6.2. Abstract](#63-externalisation) [*vs*](#63-externalisation)[. Explicit code 50](#63-externalisation)
+
+***
+
+[Spotting similarities 51](#spotting-similarities)
+
+***
+
+[Pseudocode: transcending language 53](#pseudocode-transcending-language)
+
+***
+
+[6.3. Externalisation 54](#_heading=h.48pi1tg)
+
+***
+
+[Numeric constants 54](#numeric-constants)
+
+***
+
+[String constants 55](#string-constants)
+
+***
+
+[Benefits of externalisation 55](#benefits-of-externalisation)
+
+***
+
+[6.4. Spotting algorithmic similarity 56](#64-spotting-algorithmic-similarity)
+
+***
+
+[Chapter Summary 57](#chapter-summary-5)
+
+***
+
+[Chapter 7: Functions 57](#chapter-7-functions)
+
+***
+
+[7.1. Why bother using functions? 57](#71-why-bother-using-functions)
+
+***
+
+[When to functionise? 58](#when-to-functionise)
+
+***
+
+[When not to functionise? 58](#when-not-to-functionise)
+
+***
+
+[7.2. The Doctrine of Referential Transparency 59](#72-the-doctrine-of-referential-transparency)
+
+***
+
+[Violation of referential transparency 59](#_heading=h.3ep43zb)
+
+***
+
+[Never change directory in a function 60](#never-change-directory-in-a-function)
+
+***
+
+[Writing a function is signing a contract 61](#writing-a-function-is-signing-a-contract)
+
+***
+
+[7.3. Namespaces and pollution 62](#73-namespaces-and-pollution)
+
+***
+
+[The global workspace: Emergency use only! 62](#the-global-workspace-emergency-use-only)
+
+***
+
+[Creating namespaces to avoid pollution 63](#creating-namespaces-to-avoid-pollution)
+
+***
+
+[Caution when loading variables from a file 64](#caution-when-loading-variables-from-a-file)
+
+***
+
+[7.4. Stack frames 64](#74-stack-frames)
+
+***
+
+[Stack frames help to isolate tasks 64](#stack-frames-help-to-isolate-tasks)
+
+***
+
+[What are stack frames? 65](#what-are-stack-frames)
+
+***
+
+[Nested scopes and closures [Advanced Topic] 68](#_heading=h.45jfvxd)
+
+***
+
+[Function arguments from lists 70](#function-arguments-from-lists)
+
+***
+
+[7.5. Debugging with a stack 71](#75-debugging-with-a-stack)
+
+***
+
+[If you can’t use the debugger 72](#if-you-cant-use-the-debugger)
+
+***
+
+[7.6. Returning values 72](#77-building-an-application-programming-interface)
+
+***
+
+[7.7. Building an Application Programming Interface 72](#_heading=h.4iylrwe)
+
+***
+
+[Why hide implementation? Isn’t code supposed to be open? 73](#why-hide-implementation-isnt-code-supposed-to-be-open)
+
+***
+
+[7.8. Refactoring 73](#78-refactoring)
+
+***
+
+[Functions and versions 75](#_heading=h.3x8tuzt)
+
+***
+
+[Introducing parameters 77](#introducing-parameters)
+
+***
+
+[7.9. Ordering code 79](#79-ordering-code)
+
+***
+
+[Chapter summary 80](#chapter-summary-6)
+
+***
+
+[Chapter 8: Data 80](#chapter-8-data)
+
+***
+
+[8.1. What is data? 81](#81-what-is-data)
+
+***
+
+[How to separate code from data? 81](#how-to-separate-code-from-data)
+
+***
+
+[8.2. How do computers see numbers? 82](#82-natural-representations-of-quantities)
+
+***
+
+[Integers 82](#integers)
+
+***
+
+[Double precision formats 83](#double-precision-formats)
+
+***
+
+[Infinity and beyond 84](#infinity-and-beyond)
+
+***
+
+[NaN and her family 84](#nan-and-her-family)
+
+***
+
+[Null and Void (Advanced Topic) 85](#empty-null-and-void-advanced-topic)
+
+***
+
+[How precise are my numbers 88](#how-precise-are-my-numbers)
+
+***
+
+[Complex numbers [Advanced topic] 88](#_heading=h.2hio093)
+
+***
+
+[8.2. Natural representations of quantities 89](#_heading=h.wnyagw)
+
+***
+
+[8.3. Graphical output 90](#84-structures-fields-and-reflection)
+
+***
+
+[8.4. Structures, Fields and Reflection 91](#_heading=h.1vsw3ci)
+
+***
+
+[Dictionaries and dynamic fields 92](#dictionaries-and-dynamic-fields)
+
+***
+
+[Overusing structures 93](#overusing-structures)
+
+***
+
+[Passing by value 93](#passing-by-value)
+
+***
+
+[Looping over variables 94](#looping-over-variables)
+
+***
+
+[8.5. Should I use Long or Short (wide) Form? 94](#85-should-i-use-long-or-short-wide-form)
+
+***
+
+[Converting to long form 96](#structuring-long-form-data)
+
+***
+
+[Converting to short form 97](#converting-to-short-form)
+
+***
+
+[8.6. Recursion [advanced topic] 97](#88-graphical-output)
+
+***
+
+[9. Efficiency 99](#9-efficiency)
+
+***
+
+[9.1. Making code run faster 99](#91-making-code-run-faster-and-use-less-memory)
+
+***
+
+[Check for duplication 99](#run-a-profiler)
+
+***
+
+[Remove any graphical or text output 100](#remove-any-graphical-or-text-output)
+
+***
+
+[Discard intermediates 100](#discard-intermediates)
+
+***
+
+[Preallocate memory for arrays 101](#preallocate-memory-for-arrays)
+
+***
+
+[Vectorisation 101](#vectorisation)
+
+***
+
+[Harness built-ins 101](#harness-built-ins)
+
+***
+
+[Boolean indexing 101](#boolean-indexing)
+
+***
+
+[Parallelise for loops 102](#parallelise-for-loops)
+
+***
+
+[Harness a GPU (Graphics processing unit) 102](#harness-a-gpu-graphics-processing-unit)
+
+***
+
+[Run a Profiler 102](#consider-sparse-arrays)
+
+***
+
+[Consider sparse arrays 104](#_heading=h.1smtxgf)
+
+***
+
+[Operate on small data chunks 105](#operate-on-small-data-chunks)
+
+***
+
+[9.2. Vectorisation 105](#92-vectorisation)
+
+***
+
+[Matrix multiplication 107](#matrix-multiplication)
+
+***
+
+[Boolean masking 108](#boolean-masking)
+
+***
+
+[Singleton Expansion (‘Broadcasting’) 108](#singleton-expansion-broadcasting)
+
+***
+
+[Applying functions to arrays: Mappings 110](#applying-functions-to-arrays-mappings)
+
+***
+
+[9.3. Lambda functions 110](#93-lambda-functions)
+
+***
+
+[9.4. Object-oriented programming 111](#_heading=h.1kc7wiv)
+
+***
+
+[9.5. Event-driven programming 113](#96-user-interfaces)
+
+***
+
+[9.6. User interfaces 114](#97-your-hardware)
+
+***
+
+[How to build a UI 114](#how-to-build-a-ui)
+
+***
+
+[Is a UI really needed? 115](#is-a-ui-really-needed)
+
+***
+
+[Making a long operation more friendly 115](#making-a-long-operation-more-friendly)
+
+***
+
+[Chapter 10: Errors 115](#chapter-10-errors)
+
+***
+
+[10.1. When Errors are a Good Thing! 115](#101-when-errors-are-a-good-thing)
+
+***
+
+[10.2. Anatomy of an Error 117](#102-anatomy-of-an-error)
+
+***
+
+[Understanding error messages 117](#understanding-error-messages)
+
+***
+
+[The Stack trace 118](#the-stack-trace)
+
+***
+
+[Difficult-to-debug situations where you think an error should be thrown, but it is not: 119](#what-if-no-error-is-thrown)
+
+***
+
+[Assertion 119](#assertion)
+
+***
+
+[Generate warnings 120](#generate-warnings)
+
+***
+
+[10.3. Error handlers 120](#103-error-handlers)
+
+***
+
+[Throwing and catching 120](#throwing-and-catching)
+
+***
+
+[Case study 121](#case-study)
+
+***
+
+[10.4. The short, self-contained code example (SSCE) 122](#104-the-short-self-contained-code-example-sscce)
+
+***
+
+[10.5. Spotting some obvious errors 122](#105-spotting-some-obvious-errors)
+
+***
+
+[10.6. Code review 124](#106-code-review)
+
+***
+
+[10.7. Heed the developer tools 125](#107-heed-the-developer-tools)
+
+***
+
+[Heed the Warnings! 125](#heed-the-warnings)
+
+***
+
+[Heed the Lint! 125](#_heading=h.415t9al)
+
+***
+
+[10.8. Strong and Weak Typing 126](#108-strong-and-weak-typing)
+
+***
+
+[Numerical casting 126](#numerical-casting)
+
+***
+
+[Boolean casting 127](#boolean-casting)
+
+***
+
+[10.10. Testing 127](#1010-testing)
+
+***
+
+[Creating test data – How to run a simulation 128](#creating-test-data--how-to-run-a-simulation)
+
+***
+
+[Unit Tests 129](#_heading=h.2tq9fhf)
+
+***
+
+[10.9. Provability 130](#109-provability)
+
+***
+
+[Chapter Summary 131](#chapter-summary-7)
+
+***
+
+[Reference 131](#113-interoperability-advanced-topic)
+
+***
+
+[Glossary 131](#glossary)
+
+***
+
+[Commonly confused terms 134](#commonly-confused-terms)
+
+***
+
+[Index 137](#index)
+
+***
+
+[References 137](#references)
+
+***
+
+[About the author 138](#about-the-author)
+
+***
 
 **  
   
 **
+
+## Acknowledgements
+
+This book would not have been possible without all my students, who inspired me through their perseverance in the face of mistakes. Nor would it have been possible without my parents, who had the foresight to buy me a computer and gave me the motivation to learn. Many people contributed to this book by reading and commenting, including my brother Sunil who is also a doctor-programmer, Steve Stretton the physicist-philosopher, Mark Jenkinson who is head of neuroimaging at Oxford, Marc Thomas, Shoaib Sufi, Community Lead of the Software Sustainability Institute, Martin Frasch, Andrea Bocincova, Ash Oswal and Jeremy James. Additionally I would like to thank six anonymous reviewers for their time and detailed criticism. All these people contributed insights, perspectives, and anecdotes that are woven into the book.
+
+# Chapter 1: Introduction
+
+## Aims of this book
+
+Do you write code as part of your work?
+
+Did you pick up coding while “on the job”, without formal training?
+
+If you answer yes to these two questions, then this book is for you. This book is aimed at undergraduates, postgraduates, and doctoral students across the sciences, as well as postdoctoral researchers, and data scientists. It should be relevant to anyone who needs to write computer code in order to achieve a scientific goal, including data analysis, statistics, coding tasks and data collection code, tools for others to use, or web applications.
+
+**Note: the book will not teach coding, and will assume that the reader is moderately fluent in at least one programming language.**
+
+**Poor code is often the weakest link in science**. Many causes contribute to poor code:
+
+-   Many scientists write scripts as part of their work, yet have had only brief 2-week courses in programming. Often much of their training is from colleagues, or immediate seniors, who also never received any formal training.
+-   Experiments and analyses are often essentially one-man efforts
+-   Many labs have large volumes of legacy code, where the original author may not even be in science anymore.
+-   Publication pressure leads to short deadlines and limited local training in coding.
+
+These factors lead to **many problems** such as:
+
+-   single-use code that needs to be re-written to be useful again,
+-   convoluted data pipelines which are hard to debug,
+-   poorly documented scripts that are error-prone to use,
+-   unpublishable code, and in the worst-case scenario,
+-   scientific errors and retraction of publications.
+
+Improving the quality of code facilitates open science, and fosters code re-use. This book will aim to improve coding practice in science and will promote code-sharing by encouraging readability, generalisability, and fool-proof coding styles. Ultimately, I hope that this will contribute to the increased reproducibility of scientific research. The book’s specific aims will be to:
+
+-   foster critical self-appraisal through interactive learning and ongoing self-assessment
+-   engender a passion for good code by aesthetic “training”
+-   help readers understand *why* certain styles are better than others
+-   engage readers with a visual-led and example-driven approach
+
+I will not aim to teach coding: you should already have experience with at least one language.
+
+This book will deal primarily with code **style**. This means that some of the book is opinion and taste, rather than fact. So how can we teach style? Appreciating style requires cultivation of the palate. My aim is to build in you a sense of taste for good code – an appreciation for elegant, tidy and readable code. To achieve this, you will need to know the tools and tricks, and also know when to use which trick. Many alternative ways of achieving good code will be explored, and the advantages and disadvantages of each approach will be highlighted. You might prefer one style over another, but I will try to make it clear that each situation may require a different approach.
+
+I will lead you to investigate the factors that contribute to well-written programs, focusing on style, clarity, technique, and robustness. You will see through examples that naïve styles of programming are much more bug-prone. As a scientific programmer, you will discover how to move from writing a series of one-use scripts, to writing well-planned, transparent, re-usable code.
+
+The book will cover some of the ideas and techniques used in professional software development, to the extent that they are relevant for the day-to-day scientific coder. Rather than delivering facts, the book aims to develop **intuitions**. As such, the book will be “dip in, dip out” and will not require a linear read from beginning to end. Although topics towards the end of the book will get increasingly complex, each sub-section will be a self-contained unit.
+
+**Other books**: While there are a number of fantastic coding practice books addressed at programmers, most of these are for C/C++/Java programmers, and have a focus on database, web and business logic programming (though there are a couple of great Python resources out there). Many concepts took inspiration from classical texts by Uncle Bob (Robert Martin 2000, 2009, 2011) and others. This book focuses only on Matlab, Python and R, and is directed towards scientists collecting and analysing data. As such, I will assume little about your background knowledge of computer science.
+
+**Chapters**:
+
+![](media/946cd9bd95114c50256373aefc7133db.png)
+
+Fig.1.1: Structure of this book.
+
+To cover the essentials of computer science, an introductory chapter covers classifying programming languages, functional thinking, and process models of software development. There will also be basic information on practicalities of version control and publication. Chapter 2 gives some of the reasoning behind good coding practices, and how this has been driven by increased code publishing and open-sourcing. Chapter 3 will help you create a better coding environment. In Chapters 4 to 7, we cover four core components of good code: comments, variable names, conceptualisation and functions. Writing useful comments (chapter 4) and choosing sensible variable names (chapter 5) are the visible veneer of your code, and are more matters of housekeeping. However, conceptualisation (chapter 6) and functions (chapter 7) lie at the heart of any good program. In particular, chapter 6 lays out key principles of abstraction and externalisation, and chapter 7 showcases these principles using functions. Chapter 8 is devoted to planning the structure of your data, and Chapter 9 gives some methods to make code shorter and faster. Chapter 10 aims to help you spot and fix errors.
+
+The book will aim to be *language agnostic* to the extent to which this is possible. Examples will be presented both in Matlab/Octave and Python, and where relevant, in R, but most of the techniques apply across all programming languages. My side-goal is to show parallels between languages, and make you a more versatile coder.
+
+## What makes coding so powerful?
+
+Computers are one of the greatest enabling innovations of our generation. They allow many repetitive tasks to be automated. Being able to codify a task requires you to understand that task intimately. The task needs to be conceptually broken down into its smallest, ‘abstract’ components. Take for example making a cup of tea. You can describe the task at many levels, depending on what primitive operations you are permitted to use.
+
+![](media/2c3061e6f695af3326a3319a6db4477f.png)
+
+\<image should appear as first column of the following table\>
+
+| **Talking to a friend**             | “Make me a tea please, one sugar no milk”                                                                                                                                                                                                                                 |                                                                                           |
+|-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| **Talking to a child**              | “Turn the kettle on, get a mug out, get a teabag from the third cupboard, put it in the mug, and when the water is boiled, pour it in carefully.”                                                                                                                         | Assumes good grasp of language, pragmatics, and small-scale sequences                     |
+| **High-level programming language** | “Press button on side of kettle. Open third cupboard. Locate and open box labelled “teabags”. Take one bag. Close the box and then the cupboard. Put in mug. Wait until kettle light goes off. Pick up kettle. Pour water in mug until mug is 85% full. Put kettle down.  | Assumes physical-visual coordination, some action language semantics (like “pour x in y”) |
+| **Low-level programming language**  | “Locate kettle visually. Locate red button on kettle. Move right hand towards it, with finger outstretched, until you feel the button. Increase pressure on button until you feel the button click. Remove finger from button – etc.… ”                                   | Assumes visual localisation ability, simple motor control and sensory feedback.           |
+| **Machine code**                    | “Take data from eye. Scan each region of the image for a pattern that matches a kettle. When found, move eye towards kettle. Check if each pixel of new image is red etc…”                                                                                                | Few assumptions                                                                           |
+
+\<caption\> Figure 1.1: Different ways to give instructions, with high-level instructions at the top, and low-level instructions at the bottom \</caption\>
+
+Although your program specifies the instructions at a given level, the instructions are all eventually translated into machine code, the lowest level. These are the instructions that the microprocessor chip understands. Believe it or not, real machine code actually operates at an even *lower* level than the analogy here. It is truly hard to imagine what a complex series of computational steps is being executed when you do something trivial. For example, when you open a message on your phone, your phone executes around a billion machine-code instructions! It takes several thousand just to download a single **character** from the internet. But you might program the command at a high level, so all this might correspond to just one or two lines of code.
+
+The power of programming is that you can create this structure – from the lowest level up to the highest – so that the computer can take care of all the intricate low-level steps, while you care only about the top level instructions. Good coding lets you build an efficient language to describe your common tasks.
+
+## What language to choose
+
+Choosing a language is tricky, controversial, and full of opinion. Consider the following factors when choosing:
+
+**Will I find it easy?** If you know a language already, and it can do the job, then you should stick with that language. Learning curves are steepest at the start, and some languages have a different conceptual structure that can be hard to pick up. For example, moving from python to C is hard because of declaring and typing variables, and using pointers safely. In contrast, moving from C to python is much easier – since many Python concepts are found in C.
+
+**Is it suited to the task?** Some languages have features that are suited for specific purposes. For example, if you are doing many linear operations, Matlab has built-in matrix shortcuts for this.
+
+**Can I use existing code?** Many common scientific tasks have already been coded, and increasingly, this code is openly available. This might simply be in the form of downloadable scripts from other people; or, someone may have taken the trouble to put the code in a “**library**”: a self-contained module that you can slot into your own code. Search the internet to see if anything already exists for the job – for example, there are great Python libraries for machine learning, and there are a great many Matlab libraries for signal processing; some statistical methods only have R code available. So, your tasks may determine what language you need. Open source libraries are likely to have fewer bugs and run faster than anything you can write without substantial time and effort.
+
+All languages have libraries to support data format conversion, visualisation, statistics, and machine learning, which you can search for online. Check out what libraries are currently popular – these are in constant flux.
+
+**What are my colleagues using?** Science is a team job. If you use the same language as colleagues, you can get advice, give advice, and share code. Also consider people in your field outside your team: you may eventually want to share your code more widely.
+
+If in doubt, talk to people in your field. They may have experience with libraries, and your nuanced needs, that influence choice of language.
+
+There is a trade-off between **open-source** vs. closed-source languages. Python and R are open source, whereas Matlab is proprietary. Octave is an open-source language that aims to be interoperable with Matlab, i.e. much Matlab code runs in Octave with only minor changes.
+
+| **Open Source**                                                                                                                                                                         | **Closed Source / Proprietary**                                                    |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| e.g. Python, R, Octave                                                                                                                                                                  | e.g. Matlab                                                                        |
+| Free to run code, but users need to be familiar with installing the language and libraries.                                                                                             | Expensive license needed to edit code – often costing several hundred pounds       |
+| Community **libraries** may have incompatibilities and rely on different versions of **dependencies**                                                                                   | Curated libraries guaranteed to be interoperable, and released for each version.   |
+| Not all libraries are optimised for all platforms                                                                                                                                       | Libraries professionally optimised                                                 |
+| Most languages share their underlying fast linear algebra libraries (called “BLAS” and ”LAPACK”) – so the execution speed for these most-critical operations is surprisingly all on par |                                                                                    |
+| Large communities for programming support                                                                                                                                               | Technical support from company and community                                       |
+| Downloadable code packages may contain bugs or not all uses cases covered                                                                                                               | Packages designed for general use, with options to tune to your specific use case. |
+| Python and Matlab both allow you to package executable versions of code that don’t need installation / license to run                                                                   |                                                                                    |
+| In theory, can be compiled to run on any operating system                                                                                                                               | Runs on Mac Windows and Linux (Debian/Ubuntu, RHEL, SUSE)                          |
+
+\<caption\> Table 1.1: Comparison of open source and closed source code\</caption\>
+
+Matlab has the benefit of being curated, so all provided libraries are interoperable, professionally optimised for the platforms, and support is available. However, you need an expensive license to run the code, often costing several hundred pounds. In contrast, code written in open source languages can be run by anyone.
+
+Many scientists switch between languages depending on the need case. Language interoperability may also be a consideration in many scientific environments.
+
+### Could I use a spreadsheet?
+
+Spreadsheets have been the cause for many coding errors and famous paper retractions (AlTarawneh & Thorne 2017). But yes, you can use a spreadsheet like Excel for most things that require programming. But there are major differences.
+
+\<exercise\> Make a list of the pros and cons of using Excel.
+
+| Pros                                                                                                                                                     | Cons                                                                                                                    |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| For 2D tables, spreadsheets display all the data in an easy-to-read form                                                                                 | 3D data is very tricky, and more dimensions are basically impossible                                                    |
+| Data problems visible at a glance, such as zeros or NaNs, repeated values, empty columns, misaligned rows, or major scaling errors or negative numbers.  | It’s easy to miss a problem when scanning through a large table                                                         |
+| Easy to move data around, combining and splitting arrays                                                                                                 | Manipulating the data is error prone, with no errors messages or warnings                                               |
+| Cell highlights when using a formula, so you can see what value is being used, or even where a value is used (Trace dependents)                          | Formulas not shown by default, and when they are, they are hard to read                                                 |
+| Auto-summation and pivot tables allow quick visual summaries of data                                                                                     | You can’t easily summarise complex data. It’s not always transparent what the auto-operations do e.g. with missing data |
+| Conditional formatting to quickly scan data                                                                                                              | Easy to miss hidden columns, hidden formulas                                                                            |
+| Possible to operate on arrays or matrices                                                                                                                | Loops and whole-array operations are tricky. You could use Visual Basic but that adds another layer of complexity       |
+| Easy one-click charts                                                                                                                                    | Limited control over the output                                                                                         |
+| All comments are data - so you can easily use them in chart labels etc.                                                                                  | Poor separation between data and code – for example it’s easy to paste numbers over a formula.                          |
+| If you feel more comfortable with spreadsheets, it can be faster with fewer errors, for small datasets.                                                  | Slow and error-prone if you have large quantities of data                                                               |
+
+\<caption\> Table 1.2: Pros and cons of spreadsheets \</caption\>
+
+\</exercise\>
+
+Using spreadsheets for data can be useful. You get an immediate view of the numbers. You can use scroll bars to look around. with a pleasant interface. Moreover, it is critical to inspect the raw values. However, you lose the power of programming
+
+-   you can’t replicate your actions, or automate things;
+-   you can’t audit your actions, to see what exactly you did.
+
+Learn the alternatives to spreadsheets. They are useful for some things:
+
+-   Spreadsheets are excellent for data entry. They can mix text and numeric data in a column, which is sometimes essential, although this isn’t that helpful for later quantitative analysis.
+-   There are ways to do quite powerful things in a spreadsheet. For example Excel has multi-cell array formulae which can perform matrix-like operations. These are entered with Ctrl+Shift+Enter, and allow results to spill into neighbouring cells.
+-   Excel Tables now allow structured referencing, e.g. my_table[@ [colA:colC]] which accesses a sub-matrix of a named table, a bit like slice indexing in your language.
+
+But if your data has more than 2 dimensions (e.g. a 3-factor design), or has more than a thousand datapoints, you will likely benefit from abandoning spreadsheets. Statistical analyses done in spreadsheets tend to be shallow and miss many safety checks and diagnostics found in R / Matlab or dedicated statistics software. Moreover they usually indicate that the data has been looked at on a superficial level.
+
+Good practices for spreadsheets are similar to good coding. Break down formulas into manageable chunks. Give names to each cell or range – either use text in another “label” cell, or better still, use named ranges. Take care when copying and pasting formulas -- which is necessary in spreadsheets. For every reference, add \$ signs wherever the value is not part of an array. For example, = \$A2 + \$C\$1.
+
+\<ref\> https://retractionwatch.com/2021/02/08/why-good-phd-students-are-worth-gold-a-grad-student-finds-an-error/\</ref\>
+
+## Classifying programming languages
+
+There are hundreds of programming languages. Remarkably, every language can produce exactly the same set of algorithms (Turing 1936). In theory, this means that they are all equally powerful. What, then, makes them different?
+
+Depending on what you want to do, the same program in different languages might have dramatically different lengths. For example, in a scripting language for a word processor (e.g. Visual Basic for Microsoft Word), you can check the spelling of this book in a single-line command. Doing this in Matlab would involve a lot of work. Conversely, you can multiply two matrices in a single instruction in Matlab, but this might take six lines of code in Basic.
+
+In this book we will provide examples for Matlab, Python and R. These will be colour-coded:
+
+% Matlab code
+
+\# Python code
+
+\# R code
+
+and code where the language isn’t important
+
+the code, bold font will refer to **keywords**, built-in or library functions. In the main text, italic refers to a **technical term**, and green indicates a term listed in the **glossary**. In Python I will assume we have imported the numpy library, with the convention import numpy as np.
+
+### Functional vs Imperative:
+
+Imperative languages focus on instructions to change things. They are usually **procedural** – focusing on blocks of instructions executed in sequence. Functional languages, in contrast, emphasise processing inputs to produce outputs.
+
+| Imperative                                                                                                                                            | Functional                                                                                                                         |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| a = 2 **\# set a variable’s value** a_squared = a\*a **print**(a_squared)  **% load variable X from file** load datafile  plot X **% plot the data**  | **\#** **define a function** squared(x) = x\*x  **print**(squared(2)) **\#** **invoke it**  **plot**(   load( "datafile", 'X' )  ) |
+
+Here, imperative languages focus on the instructions the computer will follow, whereas the functional language encourages us to think about the flow of information.
+
+In Matlab, functions can be called in an imperative style. Many Python functions return nothing, encouraging imperative programming. At the other extreme are **functional programming** languages, such as ML, Lisp and Haskell. In those languages, everything is a function, and information “flows through” functions. In the example above, “print 2\*2” is treated as passing 2 into a squaring function, and then passing on the result of this to a printing function. The functions try to be as pure as possible: we will discuss why in chapter 7.
+
+In shell scripts (e.g. bash on Linux), you can also adopt a functional programming style using pipes, where input from one command is sent to another using the symbol \|.
+
+The syntax of R is conducive to a more functional style of programming. You can manipulate expressions, formulas and calls as though they were objects. You can even use a pipe operator from package dplyr: e.g. 0 %\>% cos 1.
+
+**Object-oriented programming** is an alternative style to functional programming. Each piece of data has a defined set of functions that can operate on it, known as ‘methods’. Data can be ‘encapsulated’ in an object, that knows its own type or ‘class’, that determines which functions can be used. For example, a table object might have a function to sort its rows. This book doesn’t have enough space to cover this, but a brief overview is in \<link\> chapter 9.4.
+
+### Strongly-typed vs. weakly-typed languages
+
+Variables in a strongly-typed language aren’t automatically converted from one type to another. For example, text and numbers are considered as incompatible:
+
+class(1) 'double'
+
+class('1') 'char'
+
+type(1) \<type 'int'\>
+
+type('1') \<type 'str'\>
+
+class(1) "numeric"
+
+class('1') "character"
+
+This generally means that you cannot combine them with simple operators:
+
+'1' + 1
+
+50
+
+'1' + 1
+
+Unsupported operand type for +
+
+'1' + 1
+
+Non-numeric argument to binary operator
+
+Python and R use strong typing here, and disallow conversion of the text into a number. However, Matlab allows text to be treated as numbers – in this case '1' has a value of 49 in **ASCII**, giving the strange answer 50. However most languages use weak typing for **booleans** (logical true or false values). Although they are represented as their own type,
+
+class(true) 'logical'
+
+type(True) \<type 'bool'\>
+
+class(TRUE) 'logical'
+
+booleans can be silently **promoted** to **integers**, so you can do this:
+
+1 + true 1+True 1+TRUE
+
+2 2 2
+
+The Boolean true values have been converted to the integer 1. False values would be converted to 0. This is an example of weak typing. Sometimes this is called **implicit casting**: the boolean is cast to an integer type.
+
+\<box\> Programming languages are case-sensitive, unlike filenames in Windows. This means that you have to capitalise keywords like True exactly right. Similarly, x and X always represent different variables. Consider this when naming variables! \</box\>
+
+Weak typing allows you to write some things in short form – for example you can use a **boolean** as an index. Imagine you have a boolean variable isRight, indicating if an event was on the left or right side, and you want to translate this into a **string**. Instead of writing
+
+if isRight
+
+side = 'L'
+
+else
+
+side = 'R'
+
+end
+
+side = 'R' if isRight else 'L'
+
+side = if(isRight) 'R' else 'L’
+
+you could use an array and index into this by implicitly **cast**ing the boolean to an integer:
+
+side = {‘L’,’R’}
+
+side{ isRight + 1 }
+
+side = [ ‘L’, ‘R’ ]
+
+side[ isRight ]
+
+side = c(‘L’, ‘R’)
+
+side[[ isRight + 1 ]]
+
+However, weak typing allows mistakes that are hard to debug – for example if you put the **character** '1' in a variable and try to do arithmetic.
+
+**Static vs dynamic typing**: In interpreted languages like Python, Matlab and R, types are only inferred at the time a program is run (runtime or **dynamic typing**). Stricter languages like C and Java won’t allow you to run a program unless variables are of the right type (compile-time or **static typing**). Scientists often deal with dynamically-typed languages, which make it easier to prototype working code, but at a cost. There are many families of code error which the computer cannot warn you about. As we discuss in chapter 10, this can be dangerous.
+
+### Interpreted vs Compiled languages
+
+Traditionally, when you type in a program, you type in words and symbols as text. This has to be converted into a machine code, where your text is turned into a sequence of simple low-level instructions, and each instruction is mapped to a number. If this conversion is done before running anything, the code is said to be ‘compiled’ to machine code. If, on the other hand, this conversion is done ‘on the fly’, line-by-line, during execution, the code is said to be ‘interpreted’.
+
+Historically, compiled code ran much faster. These days, a number of techniques exist which make interpreted code run pretty fast. Compilation might occur just before parts of a program are executed – known as “just-in-time” compilation. Both Matlab and Python are interpreted, but both can compile code to a ‘native executable’ file, sometimes called a **binary file**.
+
+Why do scientists often use interpreted languages?
+
+-   You can interrupt analysis to examine data, and change code to fix problems;
+-   You can program interactively at a console. This is termed a **read-eval-print loop** (REPL) as the interpreter reads what you type, evaluates it, then prints the result;
+
+***
+
+-   Quickly changing and running the program is simpler, as you don’t need to compile, which can be slow;
+-   Debugging can be easier.
+
+Consequently code development time is an order of magnitude faster. But:
+
+-   Interpreted code runs slower. For some tasks, this may be negligible, but for others it could mean a tenfold slowdown. Speed-critical tasks may require you to use a compiled language like C/C++. It might also be necessary when controlling certain peripheral devices.
+-   Errors may not be detected until you get to the line with the problem. While simple problems like “syntax errors” can be spotted before running the program, many critical issues cannot. Compiling before running allows a much wider range of problems to be flagged up before running.
+
+\<key point\> For you as a scientist, your code is your lab, and running programs is like doing experiments. Scientific code cannot be designed in advance: it evolves. \</key point\>
+
+### High-level vs Low-level languages
+
+![](media/c43d2a1bb8c6724f54f6a11814f848eb.png)
+
+\<caption\> Figure 1.2: The level of a language confers benefits and drawbacks \</caption\>
+
+As mentioned in the previous section, some languages allow you to achieve many things in one step. One command might translate into a vast sequence of lower-level instructions. For scientific code, it is usually better to communicate using the highest-level language possible: a language that abstracts away from the internal representation, so that you can focus on the logic. High-level languages tend to be more domain-specific, and can deal with more complex data structures.
+
+### General-purpose vs Domain-specific languages (DSLs)
+
+Python is a true general-purpose language. It can be used for commercial software development, for graphics, or just for quick short scripts within a word processor. It can run on servers, in a lab, or at home. Matlab and R, in contrast, are specifically designed for scientific use. Matlab is optimised for matrix manipulation, and rapid computation with large arrays. R is designed with statistical modelling in mind.
+
+Some applications have languages that are specifically designed for them. For example, there are business languages. Hypertext markup language (HTML) was created specifically for designing web pages, and is domain-specific, whereas its parent XML (Extensible markup language) is general-purpose. XML has ‘schemas’ that enable more specific languages to be defined, such as Scalable vector graphics (SVG) which defines instructions for drawing line art.
+
+### Array formats
+
+One other way that languages differ, is in how they treat arrays of numbers. Subscripts, the integers that specify which item in an array, may begin with zero (**zero-based indexing**, Python) or one (Matlab, R). Arrays of numbers are passed to functions as a copy (**pass-by-value**), or as a link. And multidimensional subscripts like [row, column] map differently onto the “flat” one-dimensional sequence of memory locations.
+
+## Chapter summary
+
+Programming allows you to get things done quickly and reliably. It’s pretty unlikely that your computer will make a mistake. Most errors come from translating your thoughts into a computer programming language. There are many types of programming language, suited to different problems. For science, a high-level language with native parallel array operations is ideal (Matlab, Python + numpy, or R).
+
+Discussion Questions: Ask around people in your department or group. How many use programming? And of them, what proportion are using each language?
+
+# Chapter 2: Best Practices
+
+For one simple task, there are a hundred ways to write a piece of code that accomplishes it. All these pieces of code may work. They may even behave identically in all situations, i.e. represent exactly the same algorithm. But they may look and read completely differently. Best practice is about how to choose the best version.
+
+In this chapter I will demonstrate
+
+-   why I care so much about good practice
+-   that there are plenty of resources around to help
+-   that open code is vital for science
+-   why you should learn to use a version control system
+-   that there is a workflow for developing code
+
+## 2.1. What is Good Coding Practice?
+
+Professional programmers are coached to program well. The principles of good coding were established in the 1970s (Kernighan et al. 1974), and were aimed at programmers writing in lower level languages, whose code needed to be read by other programmers. The overarching aims include:
+
+-   **Error-free code**: In practice this means ensuring that a program’s behaviour is specified accurately for every possible situation
+-   **Team coding**: Often dozens of developers will be coding one software product. Coders may come and go from a particular project.
+-   **Maintainability**: If a new version of the language or libraries is released, or as new scientific knowledge emerges, you may need to update your code to keep it functional.
+-   **Maintaining security**: Commercial code needs to ensure data privacy, and resist hacker attacks
+-   **Making code run faster**: If a program runs continuously with high throughput, efficiency can make a big difference to consumers.
+-   **Economising on memory**: When multiple tasks occur simultaneously, it becomes important to manage which information to hold on to, and kept in memory (**RAM**), rather than being kept on disk.
+-   **Robustness to different computer systems**: Commercial software must often be usable on many different computer setups, and is often platform-independent
+-   **Flexibility and future-proofing**: The consumer may want additional functions, or to handle new situations.
+
+Some but not all of these considerations may apply to scientific code.
+
+The first point, error-free code, is worth a little expansion: Code can be wrong in two ways.
+
+1.  If the computer detects there is something wrong, an **error** might occur. Your code might generate a message, or blank output, or the computer might crash. This might occur only in very specific circumstances. But in these cases, you know about the problem when it occurs, and you can do something about it.
+2.  The computer may run the code just fine, but the program does not do what it was supposed to. This is a silent **bug**. Your code might output incorrect numbers, mix up an analysis, or delete something it was not meant to. Again, this might happen only in very specific circumstances. And when it does happen, you may never find out about it.
+
+If you don’t specify what behaviour you desire from your program beforehand, then it’s hard to classify the bad behaviour as a feature or a bug! For example, you might simulate a biological or physical process, and find the variables diverge to infinity. This is usually because the problem was poorly specified (bad assumptions or parameters), rather than a coding error. In this case, the divergence is a useful feature, as it informs us that our model assumptions are invalid.
+
+## 2.2. Why should I bother to write good code?
+
+For scientists, the main benefits of good code are
+
+-   **Fewer errors**: which means fewer retractions and failures to replicate
+-   **Quicker debugging**: scientists waste a lot of valuable time poring over red error text
+-   **Easier to modify and reuse**: there is no point re-inventing the wheel
+-   **Readable by others**: allows code to be verified and publishable
+-   **Easy to return to**: scientists often need to revisit old experiments and data, in light of new findings
+
+Small investments early on can make later life easier! (Wilson et al 1996)
+
+### Software carpentry
+
+You cannot write good code without knowing how to program. This book does not teach coding. There are many ways to learn.
+
+-   Local coding courses may be available through your institution – introductions to coding, training in specific languages, or domain-specific courses
+-   Software carpentry courses, that teach general practical techniques, and how to capitalise on available tools \<see ref 1\>
+-   Free online resources on the internet, e.g. web pages and videos \<see ref 2\>
+-   Online courses
+-   Books specific to your programming language
+
+\<ref 1\> <https://software-carpentry.org/> \</ref\>
+
+***
+
+\<ref 2\>https://www.software.ac.uk/programmes-events/carpentries/software-carpentry\</ref\>
+
+***
+
+Books and courses are great, but you cannot learn to program without experience – just like you can’t learn to play the piano simply by reading textbooks and listening to music. There are two kinds of experience:
+
+1.  trying to **code from scratch** your own ideas – for example,
+
+***
+
+-   you might have read an interesting algorithm in a paper, and you want to implement it on your own data, or in a different language, or repurpose it.
+
+***
+
+-   Or perhaps you are a statistics whizz who conceives a statistical model: you might want to simulate or fit it.
+
+***
+
+-   Or perhaps you found the equations for a scientific model, and want to apply it to actual numbers.
+
+***
+
+Here, you learn to break down concepts into instructions, think logically in terms of steps and variables, and build a mapping from your scientific language to a computer language.
+
+Adapting other people’s code – for example you may have inherited code from other people, and you want to add a new function. Or perhaps you downloaded a toolbox from the internet, and need to modify it. Reading code and working out its meaning (**reverse engineering**) is a skill, and lets you acquire new snippets of language, and recognise new **design patterns**.
+
+\<case study\>
+
+![](media/30f77bea6dbeeba46985cff382d76565.png)
+
+What is your worst nightmare? For me, retraction of a high-impact paper is one. Retractions are increasingly common results of code errors (Casadevall et al. 2014). In the above case, a small error in a script crept in. The code was inherited from another lab, and in their excitement about the results, the code wasn’t checked. Two columns of data were flipped, leading to a protein’s structure being mirrored.
+
+Consequently, five papers, including three published in *Science* between 2003 and 2005, had to be retracted in 2006 (Miller 2006). The papers were highly cited and controversial, so if the code had been **open source**, the error would doubtless have been picked up much sooner. The authors were candid about the mistake, and continue their highly successful work.
+
+Admitting errors is painful, stressful and depressing.
+
+\<key point\> Science is built on community trust. For this, we need a fair, open, blame-free culture. Top scientists admire people who admit their errors. \</key point\>
+
+\</case study\>
+
+## 2.3. Version control
+
+What happens when you want to change some code? Most people will change the code, then save it. But this carries a high risk of “breaking” old functionality. That is, after you have made the change, you might not be able to run the same code on old data. When possible, you should try to make your code backwards compatible. How can you get around this?
+
+**Exercise**: You have written an analysis script, “Analysis.py”. You get a new dataset, and you need to change the script because the new data includes an additional variable. You edit the code to work with the new script. What do you do now?
+
+-   Save over the old version.
+-   Save it as “Analysis_for_new_data.py”
+-   Rename the first one “Analysis01.py”, and save the new one as “Analysis02.py”
+-   Add the date to the end of the file, “Analysis_2020_05”
+-   Create a new folder, called “Second_dataset”, and save the file there with identical name
+-   Add a line to your code “DATASET = 2”, and where you make your modifications, wrap them with “if DATASET==2:”
+
+Each method has problems. Can you identify them?
+
+|                                   | Pro                                                                                                                                                                                                                                                                                                                        | Con                                                                                                                                                                                                                                                             |
+|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Save over old version             | You don’t need to change any scripts that call this script: they will automatically find the new version.                                                                                                                                                                                                                  | You may no longer be able to analyse the old dataset.                                                                                                                                                                                                           |
+| Analysis_for_new \_data.py        | Semantic name: you can understand from the filename what it’s for                                                                                                                                                                                                                                                          | Duplicates code. If you needed to change both the new and old analysis simultaneously, you need to remember to duplicate the changes too.                                                                                                                       |
+| Analysis02.py Analysis_2020_05.py | Creates a sequential order, so that changes can be seen.                                                                                                                                                                                                                                                                   | Can lead to messy, cluttered folders, and difficult to keep track of which version to use. Old scripts that call on Analysis.py need to be changed                                                                                                              |
+| Second_dataset/ Analysis.py       | Moving between directories automatically selects which version of the script you want. Creates organisation in file structure.                                                                                                                                                                                             | Can be very confusing if you are relying on the PATH to find the code (in Matlab). When debugging, it is not clear which of the two files has the error, because error message may just say “Analysis.py”.                                                      |
+| If DATASET==2:                    | You can switch between the datasets by changing a variable. Does not duplicate code, so subsequent changes can be applied to both datasets. You get a single script at the end, for distribution. Encourages generalisation of the code, and thinking about what aspects of your analysis are common to the two datasets.  | Not suitable for all changes. Some changes are too large and would lead to a lot of “if” statements. Runs the risk of breaking your analysis for the first dataset Code can get complicated quickly, and you may need to split the analysis in different ways.  |
+
+There is a ready-made solution for this problem: Version Control software. There are a range of tools you can use: find out what your colleagues are using. The common ones are: Git, Subversion (SVN), and Mercurial. They have similarities and differences, and they all have a learning curve. Many online learning resources are available for beginners.
+
+### A simple workflow
+
+Version control programs are integrated into several coding environments, but are also available as standalone command line tools, which may have their own standalone graphical interfaces (independent of any IDE).
+
+Most tools allow “branches”, containing different versions of your code. However, a minimal workflow might use just a single “master” branch, where you commit daily changes. As an individual scientist, you might want to
+
+-   maintain multiple versions of your code
+-   keep backup copies on disk or on cloud
+
+***
+
+-   synchronise edits from multiple computers
+
+***
+
+-   back-track at any point
+-   audit progress.
+
+For the community of scientists, they permit
+
+-   code sharing
+-   future adaptation of your code by other people for new purposes
+-   code maintenance by the user community.
+
+***
+
+-   concurrent collaboration, synchronising edits from multiple users
+
+### A more involved workflow
+
+Common features are
+
+-   Forks and branches: you can create a parallel copy of the code. This means different people can work on different parts of the code, and you can have copies with different functionality.
+-   Merge: Somebody responsible can bring together changes made in different branches.
+-   Cloning and Committing: These features give you the ability to edit and tweak code on a local computer, then send your edits to a central location.
+
+\<image\>
+
+![](media/89c9a449782b80d880b75da75f7f332b.png)
+
+\<caption\> Figure 2.1 **A more complex use of a version control system**. Version control systems allow operational and development versions to co-exist. Code can be changed by different people, and the edits merged. In this example, the main trunk contains fully operational code. A branch is created in the repository, for developing the new feature. Alex and Ben "check out" this branch, meaning that their computers’ files reflect the new branch. After they make changes, they can "check in" their edits back to the branch. If the edits conflict, they have to be resolved manually. Edits within this branch don't affect the trunk. Once the tests have been passed, the changes from the branch can be merged into the trunk. \</ caption\>
+
+One major problem is that multiple versions of commonly-used code inevitably means conflicts. Some authors recommend that code should be open for extension, but closed to modification (the **open-closed principle** (Martin 2000)). This would avoid version conflicts altogether. But it’s not possible to predict use cases in advance, so branching versions remain the norm, and guidance is available (Perez-Riverol et al. 2016).
+
+***
+
+### Diff
+
+You will need to get familiar with a file comparison utility, sometimes called a **diff** tool. Diff software allows two files to be compared line-for-line. This can be used with or without version control. There are graphical diff tools, which contrast two files side-by-side. These programs will try to line up matching parts of the files, and highlight the changes, with sophisticated algorithms that can spot moved sections. Some programs will also allow you to **merge** selected changes across the files.
+
+It may be useful to know that the original console diff command (available on UNIX/Mac) can produce a text file that summarises the differences between two files, and these changes can then be applied to a file using the patch command.
+
+## 2.4. Publishing Code
+
+Many Universities have their own archives for code and data, and there are national archives. Additionally, some journals have begun to host resources to accompany papers. These have the advantage that
+
+-   they are guaranteed to be operational for a long time e.g. 10 years
+-   once deposited, no maintenance or subscription is needed on your part
+
+However, this kind of deposited version is usually a **final** version. So this kind of archiving is useful for data and scripts that accompany published manuscripts, which will not be further modified as they reflect a finished product.
+
+One alternative is to publish code (and data) in a repository that implements version control. These environments include GitHub, GitLab or Open Science Framework. You may have institutional guidelines on where and how to publish different kinds of code and data, and how to deal with versioning, linking to preprints, and the institution’s open science policies. Consider a service that provide a citable digital object identifier (DOI) for publishing research code.
+
+What counts as a good format for publishing code? Some people prefer a downloadable unit – e.g. an archive (e.g. a zip file).
+
+-   Archive files preserve the folder structure on your disk, which might be important for your code. It has the full directory structure all laid out. You can unpack the archive and directly run.
+-   Zip archives are compressed, which means for code they can take up less than 40% as much space. But since code is small, it’s usually compressing the data that makes a big difference. If your data has a high resolution, e.g. very fast sampling rates or a large number of bits per sample, then you could achieve up to 90% compression. Some files are already compressed, such as Matlab mat / HDF5 files, TIFF or PNG files, so may not benefit further.
+-   Archives also contain a **checksum**, which means that if a **byte** in the file gets changed (e.g. by a disk or network error), this is detected and you will be notified. If not for the checksum, a small change that doesn’t break your code might go unnoticed.
+
+The flipside of this is that a single byte error in an archive file means that the whole file is corrupted, and sometimes none of the information inside is retrievable.
+
+\<example image - zip folders TODO\>
+
+-   Provide a **Readme file**, in the root directory. This should provide instructions on how to get it working. Explain where to unzip the files, how to install required **dependencies** (extra components required to run the program), and configure the search path if needed.
+-   A **Manifest file** is a structured file (i.e. it is machine readable) that indexes your archive. It might give the type of each file, its size, and a list of dependencies for each one.
+
+***
+
+-   Provide a clear **entry point**: a script that can be simply loaded and run, without any extra setup
+-   Provide **metadata** for any data – that is, information about how the data is structured. This should include a hierarchy of variables, naming conventions, array dimensions, column headings and units. Include the same kinds of information you would use when commenting variables in code\*. You can provide metadata simply through your code, or use a separate file e.g. XML, a table, markdown or markup, or just plain text.
+-   Give a reference to a paper, where the methods are fully described. You want to be cited, don’t you? And nobody can use data or code if the methods are not explained in full detail.
+-   Provide your contact details – perhaps a permanent email address as well as an institutional one.
+-   Minimise namespace intrusions, which may cause **collision** problems for some users.
+-   Be prepared to offer support. Depending on the popularity of the resource you publish, you might need forum or group mailing list.
+-   Update your code. If bugs are found, correct them using version control, and advertise the changes to minimise people affected.
+
+An alternative way to publish code is an **interactive notebook** or ‘live script’. Code is presented as a webpage, including interactive commands and their outputs. Notebooks contain a list of cells, each with a few lines of code, that can be stepped through. Each cell might produce some intermediate output. Cells can also contain text and equations. This allows a reader to follow through the steps of an analysis.
+
+### Code security
+
+This book is not intended to be a guide to information security: plenty of other guides are available for that \<ref CNIL\>. But, as part of research ethics, institutional policies and national regulation (e.g. General Data Protection Regulations (GDPR)), we all have a duty to keep data secure. I will summarise some measures here, but they should be obvious.
+
+**Data security** should be in proportion to how sensitive the data is, so use common sense:
+
+-   Password/passcode protected logins for all devices, including mobile phones – follow guidelines on password strength and reuse. As a programmer, you will begin to realise how easy it is for a hacker to fool a computer.
+-   Always use an encrypted drive when transferring files
+-   For human data
+    -   anonymise data at the point of collection
+    -   keep linkage key on paper in locked room, so that identifying information is not stored electronically
+-   Avoid use of uncertified cloud platforms, according to your local policy
+-   If you store confidential data, consider
+
+***
+
+-   operating-system level hard disc encryption
+
+***
+
+-   saving documents with password-based encryption.
+
+***
+
+Part of this is also keeping your computers safe
+
+-   Avoid uncertified remote desktop software, desktop sharing, or remote login servers
+-   Use appropriate firewall and antivirus
+-   Caution when opening email attachments or clicking on email links
+-   Never provide your password to anyone or re-use passwords. Many institutions now recommend password managers or “digital wallet”.
+-   Set appropriate permissions on data directories
+
+\<case\> The Adult Friend Finder data breach
+
+According to CSO online and BBC reports, in 2016 hackers stole between 3.5 and 400 million usernames and passwords from the adult swingers site FriendFinder, compromising IP addresses, names, billing details, and explicit photos and messages for several casual hookup and adult content sites like stripshow.com. The files were published with a \$100,000 ransom demand.
+
+The hack exploited a trick to get files from a server that are not directly accessible. Some web pages use **local file inclusion**, which is a way to include dependencies, like include or library. Inclusions sometimes allow a the web page URL to include a query, which specifies a filename to include in the web page. For example, you might have a URL like <http://oup.com/?module=products.php>, which includes the code for ‘products’ on the page. The vulnerability meant you could replace this with a file in the server’s root directory – like /etc/passwd for example!
+
+For safety, the server should have **validated** the module query by removing slashes or dots, permitting only a particular set of module names, and also checking user access.
+
+Worse still, the passwords were only encrypted with **Secure Hash Algorithm 1 (SHA-1)**, which generates a 20 byte **hash** code. When you enter a password, only its hash code is stored, and authentication then involves comparing the hashed passwords. While this was thought to be secure, by 2005 it was shown to be crackable, taking 233 tries to find a password that will generate a given hash. Although it would cost thousands of pounds in electricity, this is easily done on modern GPUs. SHA-1 is no longer accepted for web certificates. It was estimated that 99% of the leaked FriendFinder passwords were cracked within a month, and included 5000 military and government addresses. This kind of attack is common, with victims including Yahoo, Adobe, MySpace, LinkedIn, and eBay.
+
+\<ref\> <https://www.csoonline.com/article/3132533/researcher-says-adult-friend-finder-vulnerable-to-file-inclusion-vulnerabilities.html>; <https://www.bbc.co.uk/news/technology-37974266> \</ref\>
+
+\</case\>
+
+Some aspects of GDPR regulations \<ref CNIL\> legally require you to:
+
+-   Recognise personal data, and sensitive data. Importantly, if information can be used to identify people by coupling it with other data, it is personal. In fact, **pseudonymised data are considered personal data**.
+-   Minimise data collection
+-   Inform users in a concise, transparent, comprehensible and easily accessible communication
+-   Define a data retention period
+-   Follow the “legal basis” i.e. processing the data only for the appropriate purpose
+-   Manage access rights to the data according to need-to-know
+
+**Secure coding** is part of this, and if you are writing server code, you should read specific books on security especially **cybersecurity** (Graff & Wyk 2003; Howard & Leblanc 2004 ). Key topics include:
+
+-   Checking the input to your code, at every stage. Input validation means check that numbers and text sent to your function contain only expected values. Use **assertion** to ensure your code fails when it needs to.
+-   Use encapsulation with object-oriented code
+-   Keep code simple and readable with commenting, naming, and functions
+-   Start implementing security measures when you first plan your code
+-   Set aside time for security testing at the end, and ask an expert to find security holes
+
+\<ref CNIL\>
+
+Commission Nationale de l’Informatique et des Libertés CNIL GDPR guide <https://github.com/LINCnil/GDPR-Developer-Guide>
+
+\</ref\>
+
+## 2.5. Open Code, Licenses and Publishing Code
+
+The main open source software licenses are:
+
+-   **Copyleft** eg GPL (Gnu General public license) which allows the code to be re-used by others in new projects, as long as the project carries the same license. Used for the Linux operating system.
+-   **MIT license** – the code can be re-used for any purpose, under any license. Used for much web coding and javascript. Also requires the copyright notices to be included with any copy of the software.
+-   **BSD** (named after Berkeley Software Distribution, a Linux distribution that first used the license) – the code can be re-used for any purpose, under any license, provided the copyright notices of each contribution, and disclaimers of warrantee are preserved.
+-   **Creative Commons licenses**: often used for the text of academic papers, but not recommended for software. CC BY is an ‘attribution’ license, which allows re-use in any form, including commercial, as long as the author is credited. CC BY-SA is a copyleft version (ShareAlike), and CC BY-NC allows only non-commercial use.
+
+License conventions vary by field, and change over time. So, do your own research\<ref\> and ask what your colleagues are using. If your institution or funders claim intellectual property rights, please seek legal advice locally before committing to a license.
+
+**Ethics** of code sharing: each time you use 3rd party code, check the license, and acknowledge the code appropriately, both in comments and in accompanying publications.
+
+\<ref\> https://choosalicense.com/\</ref\>
+
+## 2.6. The Software Development Process
+
+Commercial programmers work with clients who specify what their code should do. As you might imagine, this can go disastrously wrong, since:
+
+1.  clients often have no idea how to specify an algorithm – often they have trouble even deciding exactly what the program should do in each possible case;
+2.  the programmer often has no idea about the nuances of the data and logic that the client needs;
+3.  the client usually has constantly changing demands which may be modified before the software is even finished.
+
+Software development has invented many styles of project management to approach these problems. Not all of these are relevant to scientific lab-based coding, but it pays to know that they exist.
+
+Software development is an iterative process. You start with the scientific idea, plan what steps are needed, write code, and test it. It will probably fail, which means you have to debug the code. This will often unearth problems in the code's organisation, which will require refactoring. Conceptual problems in the algorithm may require you to plan new computational steps, restarting the cycle. Development therefore proceeds in **cycles**.
+
+![](media/56dd7c1af48641a0a9b3f8720ab0033c.png)
+
+\<caption\> Figure 2.2: Starting with a very simple specification, code can be planned. The plans can then be implemented by writing code. The code can then be tested, and if it fails the test, it can be debugged and refactored. Once it passes the tests, it can be used and maintained. But usually, additional specifications are added, and the process starts again.
+
+\</caption\>
+
+**Agile**: Programmers aim to get working software out quickly, and then rapidly evolve the product by getting feedback and implementing small changes. This addresses the problem of constantly changing demands by only working toward one short-term goal at a time, with customer involvement and feedback after each goal. They use strategies like a daily **scrum** where team members summarise the day’s work, and work in **sprints** – a timeframe of a couple of weeks to achieve specific goals.
+
+**Test-driven development (TDD)**: Software is built in units, each of which is self-contained and has well-defined behaviour. Even before you begin writing code for a unit, you write the **unit tests**. The suite of tests is a complementary body of code that runs and tests each little piece of the unit. It makes **assertions** about what results are expected, in each possible situation. Writing the tests first means that they will initially fail, since there is no working code! Your job is then just to make the tests pass, so progress towards a goal is easily measured by the number of failed tests remaining. **Code coverage** measures how much of your code is actually tested by the test suite, and there are tools to analyse this.
+
+**Extreme programming (XP)**: a form of agile development in which new code is released extremely quickly – perhaps combining edits from many programmers at the end of every day. Unit tests must be written before writing any production code. **Pair programming** is common, where two coders work at a single computer – one person typing, the other reviewing. If you are interested, look these up on <http://software.ac.uk/resources/guides>.
+
+Numerous courses exist on these techniques for software industry, which may be less useful for scientific coding.
+
+\<further reading\> Extreme Programming Pocket Guide, O’Reilly 2003 ISBN-13: 978-0596004859
+
+In scientific programming, a highly effective strategy to check your code is **simulation**. This means creating artificial data, which you have full control over. You will need to come up with a **forward model** of your data.
+
+Once you have coded up a data analysis script, run it with example data that you have created. Can you obtain a null result? Can you detect a true positive?
+
+In some domains, the motto is simulate, simulate, simulate:
+
+![](media/e9e89b9b54e4d14811f77a576f44cd70.png)
+
+\<caption\> Figure 2.3: Simulation is a central component of science \</caption\>
+
+-   Generate data before you design an experiment. Add in measurement noise and process uncertainty, to see if your experimental design is appropriate to test your hypothesis.
+-   Simulate once you have pilot data, to check your power, and to validate the forward model which you use to simulate your data.
+-   Simulate again when you perform your final analysis, to see if you can actually recover the parameters you estimated.
+
+## Chapter summary
+
+Good code is important for you: it will reduce errors, and make your life easier. It’s also important for other people: your code will be re-usable by your team and the scientific community. Imagine coming back to your code in two years’ time, having forgotten all the details. How would you like the code to look? Imagine emailing the code to your boss. Would they be happy reading it?
+
+As you work on and modify your code, you want your code to be accessible, re-usable and adaptable. To achieve this, you should know a range of techniques, and when to use them – and this knowhow amounts to both a skill and an aesthetic – if you like, **phronesis** (a practical virtue).
+
+Discussion Questions: What are your favourite features of your version control system? Can you these in other aspects of your work, e.g. collaborating, writing papers, or synchronising files across computers?
+
+Further reading: Riquelme & Gjorgjieva, 2021
 
 # Chapter 3: Preparing to code
 
