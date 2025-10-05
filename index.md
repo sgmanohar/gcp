@@ -10,15 +10,6 @@ Oxford Biology Primer Series, Tools and Techniques
 
 ## Contents
 
-Contents
-
-[Good Coding Practice for Scientists 1](#good-coding-practice-for-scientists)
-
-
-
-[Contents 2](#_heading=h.30j0zll)
-
-
 [Chapter 1: Introduction 9](#chapter-1-introduction)
 
 
@@ -783,3 +774,6 @@ Contents
 
 This book would not have been possible without all my students, who inspired me through their perseverance in the face of mistakes. Nor would it have been possible without my parents, who had the foresight to buy me a computer and gave me the motivation to learn. Many people contributed to this book by reading and commenting, including my brother Sunil who is also a doctor-programmer, Steve Stretton the physicist-philosopher, Mark Jenkinson who is head of neuroimaging at Oxford, Marc Thomas, Shoaib Sufi, Community Lead of the Software Sustainability Institute, Martin Frasch, Andrea Bocincova, Ash Oswal and Jeremy James. Additionally I would like to thank six anonymous reviewers for their time and detailed criticism. All these people contributed insights, perspectives, and anecdotes that are woven into the book.
 
+## About the author
+
+Sanjay Manohar has 35 years of coding experience in C, Java, Python, Bash, Matlab, Javascript, and Basic. By career, he is an Associate Professor in Neuroscience and a Consultant Neurologist at the University of Oxford. He is a fellow of the Software Sustainability Institute, an RCUK-funded body aiming to improve software in academia. Sanjay has taught courses in Good Coding Practices for 7 years, at UCL and Oxford. He is a passionate teacher, an Associate Fellow of the Higher Education Academy, and a Member of the Academy of Medical Educators.

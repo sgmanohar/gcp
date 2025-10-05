@@ -103,3 +103,60 @@ Unicode: Unicode is a standard character set that unites various encodings. To d
 Variable width codes: To encode information into numbers, you need to define a mapping. You can minimise the space that the numbers take up in RAM or on disk, by allowing common items to be coded in a single byte, whereas rare items need to occupy many bytes. 
 White space: Characters that you can’t see are called white space. Typically the ones used in programming are spaces, tabs and newlines. Along with operators, they divide up tokens (variable names, function names) in your code. In many cases, you can add as much whitespace as you like without changing the meaning of your code: whitespace tends to be semantically neutral (except in Python indentation).
 XML: A standard format for storing complex data in a text file. The data is hierarchically organised within nested ‘tags’. Tags begin with a term in angled brackets, accompanied by parameter-value pairs (e.g. <channel rate=”10hz”>), followed by some data, and are terminated by a matching tag preceded by a slash (i.e. </channel>).
+
+
+# Commonly confused terms
+
+What’s the difference between…
+
+-   loops vs. blocks?
+    -   **Blocks** are regions of code that are executed together.
+    -   **Loops** are **blocks** which are executed repeatedly.
+    -   There are two main types of loop: for, which usually implies that the number of iterations is pre-determined, or while, which suggests that the number of iterations depends on the outcome of each iteration, and is thus determined on the fly.
+    -   Examples of blocks include these loops, but also the lines that form the body of a function. Lines following an if statement, or switch/select statements can also form blocks.
+    -   Some blocks (like the body of a function) have their own **scope**.
+-   arrays / indices / subscripts
+    -   an array is a block of contiguous memory slots (elements) that can be addressed by integers indicating the position within that block. Memory for arrays must be allocated, and so resizing an array is a bit of a pain.
+    -   To address the elements of a 1-dimensional array (i.e. a vector), you can use an **index** – a single integer that linearly indexes from the beginning of the array.
+    -   Arrays can be multi-dimensional. In this case, you can use two or more integers to locate an element in the array. These are called **subscripts**. Note that Matlab permits linear indexing into multidimensional arrays – which treats the array as a “flattened” vector.
+-   **functions** / scripts / procedures
+    -   All these are chunks of code that are executed together.
+    -   A function is a unit of code that produces a specific output, called a ‘return value’. It can also take inputs. So the function specifies a mapping from the input to the output. An example would be sin().
+    -   Scripts are units of code that do not specify determinate inputs or outputs. An example might be run_whole_analysis(). Crucially, the calculations are done in the namespace where you run the script. It can overwrite, create or accidentally use your variables when it runs.
+    -   Procedures are units of code that take input parameters, but are otherwise imperative. They do not return output values. An example would be print() or save().
+    -   Many languages do not distinguish clearly between all of these, with procedures and functions often being lumped together as “functions”.
+-   expressions / statements
+    -   An **expression** is a string of characters in your code that can be understood and converted into a value. For example 3+cos(x).
+    -   A **statement** is a string of characters in your code that can be understood and do something. It usually makes up one line of code. Although the expression above could stand alone, it is not much of a statement, as it doesn’t do anything. However, y=3+cos(x) is a statement, as it truly does something: it assigns the value to y. Statements are either assignments or function/procedure calls.
+    -   **Assignments** consist of a ‘left-value’ (before the equals) which is for example the name of a variable, and a ‘right-value’ being an expression. Assignments first evaluate the expression, then place the result in the location specified by the left-value. The assignment can also create a binding between a new variable name and its value, by adding a **key** in a **namespace**.
+    -   Expressions are made up of **terms**, and are **evaluated** (turned into values) according to operator precedence. This simply means things in brackets are converted first, then multiplications, then additions. A term means one of the things that is added together.
+-   evaluating / executing / calling
+    -   Statements are executed – they don’t generate a value
+    -   Expressions are evaluated (they are usually parts of statements)
+    -   Functions or procedures are called.
+-   declarations / definitions
+    -   A **declaration** is a line of code that lets us know what a variable or function is all about. It doesn’t necessarily create the variable, or tell you the instructions that make up the function.
+    -   A **definition** is the point in your code where a variable is actually created, or a function’s body code is specified.
+    -   Scientific languages tend not to require declarations. Declarations can be useful, though, because they specify the **interface** to your code, without specifying the implementation. You can see what variables and functions are accessible, without needing to know all the details.
+-   throwing and catching errors / exceptions
+    -   **Throwing** or raising is the act of terminating the current flow of execution, and signalling that help is needed to deal with an unexpected situation. For example, what happens if a critical file is not found? Who will help?
+    -   **Catching** is the faculty of helping out with an unexpected situation. The control flow (i.e. which instruction is currently being executed) jumps from the throw/raise line to a catch block.
+    -   **Errors** are usually events that would require your program to end. They are often “fatal”. For example, if the computer runs out of memory, this generates an error. Errors are often completely unexpected, and you would not be expected to handle (catch) them.
+    -   **Exceptions** are situations which can potentially be dealt with. For example if your analysis deals with one session at a time, but can’t deal with bad data in one session. You might want to pass control to the level above, which may warn the user and skip to the next session.
+-   references / handles
+    -   These terms are often used interchangeably.
+    -   Technically, a **reference** is an object that is dealt with via its memory address. So if you have a function, a reference to that function is an object that behaves just as if you had used the function by name – but is really acting via a pointer to that function. Under the hood, references are numbers that specify where in memory to look.
+    -   A **handle** is any number that can be used in place of an object. It need not be the memory address, and in practice, it is often a serial number constructed as needed.
+    -   Handles are used when you call an API that has a persistent state. For example, you might create a screen window, and receive a handle in return. Next time you want to access that window, you call the API but specify the handle.
+-   stack frame / **heap**
+    -   When the computer starts to execute code inside a function, it creates a new frame on the stack – that is, a clean workspace in which new variables can be created.
+    -   However, you might want to return information to the caller. If the stack frame gets deleted after your function returns, how can some variables be transmitted back?
+    -   Data for arrays, structures and other objects can be allocated outside the stack frame, in shared memory called the **heap**. The stack frame keeps a reference to this heap data, and can send this reference back to the caller. As long as the reference remains active, the heap data is protected from deletion.
+-   polling / hooking
+    -   **Polling** is a **design pattern** for checking if something has occurred. Your code contains a long loop, and within the loop, you can periodically check on the status of some ‘state’ variable. Maybe you’re doing a long calculation, and after every iteration you check whether the user has pressed escape.
+    -   **Hooking** is where you send a reference to your own function, to an event-processing API. That API can then call your function when an event occurs. For example, you might write add_keypress_hanlder( stop_calculating, “ESC” ). You have ‘hooked’ your function to the escape event. I think it’s a fishing analogy?
+-   flags / semaphores
+    -   A flag is true or false and signals whether something is the case.
+    -   **Semaphore** is a way of signalling when a resource is in use. It is useful when two or more threads need to talk to each other. For example if you are updating data for another program to read, you might make a semaphore nonzero when you start to write the data, and reduce it again when you are finished. Crucially, before you read or write, everyone always checks that the semaphore is zero. So, the semaphore stores an integer count of how many people are using a resource, but it functions as a flag to indicate whether the resource is free.
+    -   Semaphores can be used instead of flags, for turning something on and off. Specifically, if a common resource has a feature that can be turned on or off, then the semaphore functions as a counter for how many times the ‘on’ routine has been called without an ‘off’. This is important when functions call other functions. Examples of where semaphores would be useful, are in turning on logging (diary on), recycle on, or hold on. In these cases, two library functions might want the function turned on. I call library 1, which turns it on, and library 1 calls library 2 which turns it on again. Library 2 returns from the call, and turns it off. Control returns to library 1, who expects the option to still be on. Replacing the Boolean with a semaphore would solve this. Unfortunately Matlab does not implement this as semaphore, so instead you need to check the previous state, e.g. with ishold or get(0,’diary’).
+
