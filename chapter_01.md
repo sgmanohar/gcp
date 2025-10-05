@@ -195,31 +195,10 @@ Variables in a strongly-typed language aren’t automatically converted from one
 | `class(1)` 'double' | `type(1)`     <type 'int'>     | `class(1)` "numeric"     |
 | `class('1')` 'char' | `type('1')`   <type 'str'>    | `class('1')` "character" |
 
-class(1) 'double'
-
-class('1') 'char'
-
-type(1) \<type 'int'\>
-
-type('1') \<type 'str'\>
-
-class(1) "numeric"
-
-class('1') "character"
-
 This generally means that you cannot combine them with simple operators:
 
-'1' + 1
-
-50
-
-'1' + 1
-
-Unsupported operand type for +
-
-'1' + 1
-
-Non-numeric argument to binary operator
+| Ⓜ️ |  🅿️  |  ®️  |
+| `'1' + 1`    50 | `'1' + 1`  Unsupported operand type for + | `'1' + 1`  Non-numeric argument to binary operator |
 
 Python and R use strong typing here, and disallow conversion of the text into a number. However, Matlab allows text to be treated as numbers – in this case '1' has a value of 49 in **ASCII**, giving the strange answer 50. However most languages use weak typing for **booleans** (logical true or false values). Although they are represented as their own type,
 
