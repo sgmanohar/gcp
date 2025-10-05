@@ -1,0 +1,213 @@
+# yaml version of table of contents
+- toc
+  - title: Chapter 1: Introduction
+    subfolderitems:
+      - page: 1.1. Aims of this book
+        url: chapter_01.html#aims-of-this-book
+      - page: 1.2. What makes coding so powerful?
+        url: chapter_01.html#what-makes-coding-so-powerful
+      - page: 1.3. Classifying programming languages
+        url: chapter_01.html#classifying-programming-languages
+        subfolderitems:
+          - page: Functional vs Imperative:
+            url: chapter_01.html#functional-vs-imperative
+          - page: Strongly-typed vs. weakly-typed languages
+            url: chapter_01.html#strongly-typed-vs-weakly-typed-languages
+          - page: Interpreted vs Compiled languages
+            url: chapter_01.html#interpreted-vs-compiled-languages
+          - page: High-level vs Low-level languages
+            url: chapter_01.html#high-level-vs-low-level-languages
+          - page: General-purpose vs Domain-specific languages (DSLs)
+            url: chapter_01.html#general-purpose-vs-domain-specific-languages-dsls
+          - page: Zero vs one-based indexing
+            url: chapter_01.html#zero-vs-one-based-indexing
+      - page: 1.4. What language to choose
+        url: chapter_01.html#chapter-summary
+  - title: Chapter 2: Best Practices
+    subfolderitems:
+      - page: 2.1. What is Good Coding Practice?
+        url: chapter_02.html#21-what-is-good-coding-practice
+      - page: 2.2. Why should I bother to write good code?
+        url: chapter_02.html#22-why-should-i-bother-to-write-good-code
+        subfolderitems:
+          - page: Software carpentry
+            url: chapter_02.html#software-carpentry
+      - page: 2.3. Open Code, Licenses and Publishing Code
+        url: chapter_02.html#23-version-control
+      - page: 2.4. Version control
+        url: chapter_02.html#_heading=h.3j2qqm3
+        subfolderitems:
+          - page: Diff
+            url: chapter_02.html#diff
+      - page: 2.5. Publishing Code
+        url: chapter_02.html#24-publishing-code
+        subfolderitems:
+          - page: Code security
+            url: chapter_02.html#code-security
+      - page: 2.6. The Software Development Process
+        url: chapter_02.html#25-open-code-licenses-and-publishing-code
+  - title: Chapter 3: Preparing to code
+    subfolderitems:
+      - page: 3.1. Are you sitting comfortably?
+        url: chapter_03.html#31-are-you-sitting-comfortably
+        subfolderitems:
+          - page: Adjust your seat
+            url: chapter_03.html#adjust-your-seat
+          - page: Keyboard and mouse
+            url: chapter_03.html#keyboard-and-mouse
+          - page: Screen position and visibility
+            url: chapter_03.html#screen-position-and-visibility
+          - page: Posture
+            url: chapter_03.html#posture
+      - page: 3.2. Your coding environment
+        url: chapter_03.html#32-your-coding-environment
+        subfolderitems:
+          - page: Using an IDE
+            url: chapter_03.html#using-an-ide
+          - page: Fonts
+            url: chapter_03.html#fonts
+          - page: Monospaced fonts
+            url: chapter_03.html#monospaced-fonts
+          - page: Font size
+            url: chapter_03.html#font-size
+          - page: Hazards of IDEs
+            url: chapter_03.html#hazards-of-ides
+          - page: Know where to find help
+            url: chapter_03.html#know-where-to-find-help
+      - page: 3.3. The Neuroscience of Legibility
+        url: chapter_03.html#33-the-neuroscience-of-legibility
+        subfolderitems:
+          - page: Screen orientation
+            url: chapter_03.html#screen-orientation
+          - page: Spacing
+            url: chapter_03.html#spacing
+          - page: Crowding
+            url: chapter_03.html#_heading=h.1v1yuxt
+          - page: Tidy code = Tidy mind
+            url: chapter_03.html#tidy-code--tidy-mind
+          - page: Black on white, or white on black?
+            url: chapter_03.html#black-on-white-or-white-on-black
+          - page: Syntax highlighting
+            url: chapter_03.html#syntax-highlighting
+          - page: Organise your files
+            url: chapter_03.html#organise-your-files
+          - page: Keeping files a sensible order
+            url: chapter_03.html#keeping-files-in-a-sensible-order
+          - page: Theory of mind
+            url: chapter_03.html#theory-of-mind
+  - title: Chapter 4: Comments
+    subfolderitems:
+      - page: 4.1. Anatomy of a comment
+        url: chapter_04.html#41-anatomy-of-a-comment
+      - page: 4.2. Commenting a variable declaration
+        url: chapter_04.html#42-commenting-a-variable-declaration
+      - page: 4.3. Commenting a function
+        url: chapter_04.html#43-commenting-a-function
+        subfolderitems:
+          - page: Function inputs
+            url: chapter_04.html#function-inputs
+          - page: Function Outputs
+            url: chapter_04.html#function-outputs
+          - page: Error conditions
+            url: chapter_04.html#error-conditions
+          - page: Header
+            url: chapter_04.html#header
+          - page: Functions that take functions
+            url: chapter_04.html#functions-that-take-functions
+      - page: 4.4. Iffing out
+        url: chapter_04.html#44-iffing-out
+  - title: Chapter 5: Choosing a nice name
+    subfolderitems:
+      - page: 5.1. Naming conventions
+        url: chapter_05.html#_heading=h.3cqmetx
+        subfolderitems:
+          - page: Avoid spaces and minus signs in file names
+            url: chapter_05.html#_heading=h.1rvwp1q
+          - page: Naming functions
+            url: chapter_05.html#naming-functions
+      - page: 5.2. Names are greedy (Huffman coding)
+        url: chapter_05.html#52-names-are-greedy-huffman-coding
+      - page: 5.3. Long and short names
+        url: chapter_05.html#53-long-and-short-names
+        subfolderitems:
+          - page: The Readability-Writeability trade-off
+            url: chapter_05.html#the-readability-writeability-trade-off
+      - page: 5.4. Variable types
+        url: chapter_05.html#54-variable-types
+        subfolderitems:
+          - page: Naming booleans
+            url: chapter_05.html#naming-booleans
+          - page: Naming arrays
+            url: chapter_05.html#naming-arrays
+      - page: 5.5. Enumerations
+        url: chapter_05.html#55-enumerations
+  - title: Chapter 6: Conceptualisation
+    subfolderitems:
+      - page: 6.1. Spotting conceptual errors
+        url: chapter_06.html#61-abstract-vs-explicit-code
+        subfolderitems:
+          - page: Your code contains “clear”
+            url: chapter_06.html#your-code-contains-clear
+          - page: You use global variables
+            url: chapter_06.html#you-use-global-variables
+          - page: You use an “eval” statement
+            url: chapter_06.html#you-use-an-eval-statement-pythonmatlab
+          - page: Your variable names contain numbers
+            url: chapter_06.html#your-variable-names-contain-numbers
+          - page: You needed to copy and paste code
+            url: chapter_06.html#you-needed-to-copy-and-paste-code
+          - page: Your functions have a lot of parameters
+            url: chapter_06.html#_heading=h.3vac5uf
+          - page: You don’t cover all the cases
+            url: chapter_06.html#you-dont-cover-all-the-cases
+      - page: 6.2. Abstract vs. Explicit code
+        url: chapter_06.html#63-externalisation
+        subfolderitems:
+          - page: Spotting similarities
+            url: chapter_06.html#spotting-similarities
+          - page: Pseudocode: transcending language
+            url: chapter_06.html#pseudocode-transcending-language
+      - page: 6.3. Externalisation
+        url: chapter_06.html#_heading=h.48pi1tg
+        subfolderitems:
+          - page: Numeric constants
+            url: chapter_06.html#numeric-constants
+          - page: String constants
+            url: chapter_06.html#string-constants
+          - page: Benefits of externalisation
+            url: chapter_06.html#benefits-of-externalisation
+      - page: 6.4. Spotting algorithmic similarity
+        url: chapter_06.html#64-spotting-algorithmic-similarity
+  - title: Chapter 7: Functions
+    subfolderitems:
+      - page: 7.1. Why bother using functions?
+        url: chapter_07.html#71-why-bother-using-functions
+        subfolderitems:
+          - page: When to functionise?
+            url: chapter_07.html#when-to-functionise
+          - page: When not to functionise?
+            url: chapter_07.html#when-not-to-functionise
+      - page: 7.2. The Doctrine of Referential Transparency
+        url: chapter_07.html#72-the-doctrine-of-referential-transparency
+        subfolderitems:
+          - page: Violation of referential transparency
+            url: chapter_07.html#_heading=h.3ep43zb
+          - page: Never change directory in a function
+            url: chapter_07.html#never-change-directory-in-a-function
+          - page: Writing a function is signing a contract
+            url: chapter_07.html#writing-a-function-is-signing-a-contract
+      - page: 7.3. Namespaces and pollution
+        url: chapter_07.html#73-namespaces-and-pollution
+        subfolderitems:
+          - page: What are namespaces?
+            url: chapter_07.html#what-are-namespaces
+          - page: Why use namespaces?
+            url: chapter_07.html#why-use-namespaces
+          - page: How to use namespaces
+            url: chapter_07.html#how-to-use-namespaces
+          - page: The global workspace: Emergency use only!
+            url: chapter_07.html#the-global-workspace-emergency-use-only
+          - page: Creating namespaces to avoid pollution
+            url: chapter_07.html#creating-namespaces-to-avoid-pollution
+          - page: Caution when loading variables from a file
+            url: chapter_07.html#caution-when-loading-variables-from-a-file
