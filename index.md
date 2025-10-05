@@ -3,8 +3,8 @@
 # Good Coding Practice for Scientists
 
 Sanjay Manohar
+
 MA MB BChir PhD MRCP MBPsS AFHEA MAcadMEd
-Oxford Biology Primer Series, Tools and Techniques
 
 ## Contents
 # [1. Chapter 1: Introduction](chapter_01.html)

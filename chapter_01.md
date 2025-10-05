@@ -59,7 +59,6 @@ Computers are one of the greatest enabling innovations of our generation. They a
 
 ![](media/2c3061e6f695af3326a3319a6db4477f.png)
 
-\<image should appear as first column of the following table\>
 
 | **Talking to a friend**             | “Make me a tea please, one sugar no milk”                                                                                                                                                                                                                                 |                                                                                           |
 |-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
@@ -189,6 +188,12 @@ The syntax of R is conducive to a more functional style of programming. You can 
 ### Strongly-typed vs. weakly-typed languages
 
 Variables in a strongly-typed language aren’t automatically converted from one type to another. For example, text and numbers are considered as incompatible:
+
+
+| Ⓜ️  `sin(x)` |  🅿️ `math.sin(x)`  |  ®️ `sin(x)`  |
+| `class(1) 'double'` | `type(1) \<type 'int'\>`     | `class(1) "numeric"`     |
+| `class('1') 'char'` | `type('1') \<type 'str'\>`   | `class('1') "character"` |
+|---|---|---|
 
 class(1) 'double'
 
