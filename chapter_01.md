@@ -237,8 +237,22 @@ you could use an array and index into this by implicitly **cast**ing the boolean
 
 | Ⓜ️ |  🅿️  |  ®️  |
 |---|---|---|
-| `side = {'L','R'}` |     `side = [ 'L', 'R' ]` | `side = c(‘L’, ‘R’)`    |
+| `side = {'L','R'}` |     `side = [ 'L', 'R' ]` | `side = c('L', 'R')`    |
 | `side{ isRight + 1 }` |  `side[ isRight ]`     | `side[[ isRight + 1 ]]` |
+
+
+| Ⓜ️ |  🅿️  |  ®️  |
+|---|---|---|
+| ```
+side = {'L','R'} 
+side{ isRight + 1 }
+``` |  ``` 
+side = [ 'L', 'R' ]
+side[ isRight ]
+```    | ```
+side = c('L', 'R')
+side[[ isRight + 1 ]]
+``` |
 
 However, weak typing allows mistakes that are hard to debug – for example if you put the **character** '1' in a variable and try to do arithmetic.
 
