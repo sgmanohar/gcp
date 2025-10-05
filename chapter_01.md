@@ -190,7 +190,8 @@ The syntax of R is conducive to a more functional style of programming. You can 
 Variables in a strongly-typed language aren’t automatically converted from one type to another. For example, text and numbers are considered as incompatible:
 
 
-| Ⓜ️  `sin(x)` |  🅿️ `math.sin(x)`  |  ®️ `sin(x)`  |
+| Ⓜ️   |  🅿️   |  ®️  |
+|---|---|---|
 | `class(1) 'double'` | `type(1) \<type 'int'\>`     | `class(1) "numeric"`     |
 | `class('1') 'char'` | `type('1') \<type 'str'\>`   | `class('1') "character"` |
 |---|---|---|
