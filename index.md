@@ -3,12 +3,24 @@
 # Good Coding Practice for Scientists
 
 Sanjay Manohar
-
 MA MB BChir PhD MRCP MBPsS AFHEA MAcadMEd
-
 Oxford Biology Primer Series, Tools and Techniques
 
 ## Contents
+
+
+# new toc:
+# [1. Chapter 1: Introduction](chapter_01.html)
+  * [1.1. Aims of this book](chapter_01.html#aims-of-this-book)
+  * [1.2. What makes coding so powerful?](chapter_01.html#what-makes-coding-so-powerful)
+  
+
+  
+
+
+
+
+
 
 [Chapter 1: Introduction 9](#chapter-1-introduction)
 [1.1. Aims of this book 9](#aims-of-this-book)
