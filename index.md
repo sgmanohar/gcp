@@ -11,38 +11,16 @@ Oxford Biology Primer Series, Tools and Techniques
 ## Contents
 
 [Chapter 1: Introduction 9](#chapter-1-introduction)
-
-
 [1.1. Aims of this book 9](#aims-of-this-book)
-
-
 [1.2. What makes coding so powerful? 10](#what-makes-coding-so-powerful)
-
-
 [1.3. Classifying programming languages 11](#what-language-to-choose)
-
-
 [Functional vs Imperative: 11](#functional-vs-imperative)
-
-
 [Strongly-typed vs. weakly-typed languages 12](#strongly-typed-vs-weakly-typed-languages)
-
-
 [Interpreted vs Compiled languages 12](#interpreted-vs-compiled-languages)
-
-
 [High-level vs Low-level languages 13](#high-level-vs-low-level-languages)
-
-
 [General-purpose vs Domain-specific languages (DSLs) 13](#general-purpose-vs-domain-specific-languages-dsls)
-
-
 [Zero vs one-based indexing 13](#zero-vs-one-based-indexing)
-
-
 [1.4. What language to choose 14](#chapter-summary)
-
-
 [Chapter summary 15](#_heading=h.lnxbz9)
 
 
