@@ -198,21 +198,22 @@ Variables in a strongly-typed language aren’t automatically converted from one
 This generally means that you cannot combine them with simple operators:
 
 | Ⓜ️ |  🅿️  |  ®️  |
+|---|---|---|
+
 | `'1' + 1`    50 | `'1' + 1`  Unsupported operand type for + | `'1' + 1`  Non-numeric argument to binary operator |
 
 Python and R use strong typing here, and disallow conversion of the text into a number. However, Matlab allows text to be treated as numbers – in this case '1' has a value of 49 in **ASCII**, giving the strange answer 50. However most languages use weak typing for **booleans** (logical true or false values). Although they are represented as their own type,
 
-class(true) 'logical'
-
-type(True) \<type 'bool'\>
-
-class(TRUE) 'logical'
+| Ⓜ️ |  🅿️  |  ®️  |
+|---|---|---|
+| `class(true)` 'logical' | `type(True)` <type 'bool'> | `class(TRUE)` 'logical' |
 
 booleans can be silently **promoted** to **integers**, so you can do this:
 
-1 + true 1+True 1+TRUE
-
-2 2 2
+| Ⓜ️ |  🅿️  |  ®️  |
+|---|---|---|
+|1 + true | 1+True | 1+TRUE |
+|2 | 2|  2 |
 
 The Boolean true values have been converted to the integer 1. False values would be converted to 0. This is an example of weak typing. Sometimes this is called **implicit casting**: the boolean is cast to an integer type.
 
