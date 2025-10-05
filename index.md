@@ -14,75 +14,58 @@ Contents
 
 [Good Coding Practice for Scientists 1](#good-coding-practice-for-scientists)
 
-***
+
 
 [Contents 2](#_heading=h.30j0zll)
 
-***
 
 [Chapter 1: Introduction 9](#chapter-1-introduction)
 
-***
 
 [1.1. Aims of this book 9](#aims-of-this-book)
 
-***
 
 [1.2. What makes coding so powerful? 10](#what-makes-coding-so-powerful)
 
-***
 
 [1.3. Classifying programming languages 11](#what-language-to-choose)
 
-***
 
 [Functional vs Imperative: 11](#functional-vs-imperative)
 
-***
 
 [Strongly-typed vs. weakly-typed languages 12](#strongly-typed-vs-weakly-typed-languages)
 
-***
 
 [Interpreted vs Compiled languages 12](#interpreted-vs-compiled-languages)
 
-***
 
 [High-level vs Low-level languages 13](#high-level-vs-low-level-languages)
 
-***
 
 [General-purpose vs Domain-specific languages (DSLs) 13](#general-purpose-vs-domain-specific-languages-dsls)
 
-***
 
 [Zero vs one-based indexing 13](#zero-vs-one-based-indexing)
 
-***
 
 [1.4. What language to choose 14](#chapter-summary)
 
-***
 
 [Chapter summary 15](#_heading=h.lnxbz9)
 
-***
 
 [Chapter 2: Best Practices 15](#chapter-2-best-practices)
 
-***
 
 [2.1. What is Good Coding Practice? 15](#21-what-is-good-coding-practice)
 
-***
 
 [2.2. Why should I bother to write good code? 15](#22-why-should-i-bother-to-write-good-code)
 
-***
 
 [Software carpentry 16](#software-carpentry)
 
-***
 
 [2.3. Open Code, Licenses and Publishing Code 16](#23-version-control)
 
