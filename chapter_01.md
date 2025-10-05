@@ -221,33 +221,24 @@ The Boolean true values have been converted to the integer 1. False values would
 
 Weak typing allows you to write some things in short form – for example you can use a **boolean** as an index. Imagine you have a boolean variable isRight, indicating if an event was on the left or right side, and you want to translate this into a **string**. Instead of writing
 
+```
 if isRight
-
-side = 'L'
-
+  side = 'L'
 else
-
-side = 'R'
-
+   side = 'R'
 end
-
-side = 'R' if isRight else 'L'
-
-side = if(isRight) 'R' else 'L’
+```
+|  🅿️  |  
+|---|
+| `side = 'R' if isRight else 'L'  ` |
+| `side = if(isRight) 'R' else 'L' `  |
 
 you could use an array and index into this by implicitly **cast**ing the boolean to an integer:
 
-side = {‘L’,’R’}
-
-side{ isRight + 1 }
-
-side = [ ‘L’, ‘R’ ]
-
-side[ isRight ]
-
-side = c(‘L’, ‘R’)
-
-side[[ isRight + 1 ]]
+| Ⓜ️ |  🅿️  |  ®️  |
+|---|---|---|
+| `side = {'L','R'}` |     `side = [ 'L', 'R' ]` | `side = c(‘L’, ‘R’)`    |
+| `side{ isRight + 1 }` |  `side[ isRight ]`     | `side[[ isRight + 1 ]]` |
 
 However, weak typing allows mistakes that are hard to debug – for example if you put the **character** '1' in a variable and try to do arithmetic.
 
